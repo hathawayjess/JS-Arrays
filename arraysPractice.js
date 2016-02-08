@@ -82,11 +82,23 @@ var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var evens = [];
 var odds = [];
 //Write a function called divider that is given three arguments, nums, evens, and odds.
-//Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
+//Have divider return an Array with the first item in the array being the evens array (all the even values from nums) 
+//and the second item in the Array being the odds array(all the odd values from nums).
 
 
 
   //Code Here
+
+  function divider(nums, evens, odds) {
+    for (var i = 0; i < nums.length; i++) {
+      if (nums[i] % 2 === 0) {
+        evens.push(nums[i]);
+      }
+      else {
+        odds.push(nums[i]);
+      }
+    }
+  }
 
 
 //Next Problem
@@ -96,9 +108,23 @@ var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 };
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-//Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
+//Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. 
+//Your job is to write a function named finder that will get a random number, then loop through the array to see 
+//if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
+
+  function finder() {
+    var randomNum = getRandomArbitrary();
+    for (var i = 0; i < numbers.length; i++) {
+      if (randomNum === numbers[i]) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+  }
 
 
 //Next problem
@@ -106,9 +132,14 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 
 
 var str = 'this is my sentence';
-//Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
+//Write a function called reverse that takes a given str as it's only argument and 
+//returns that string after it's been reversed
 
   //Code Here
+
+  function reverse(str) {
+    str.split("").reverse().join("");
+  }
 
 
 //Next Problem
@@ -120,7 +151,8 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   and adding new items to our list. 
   
   Write a function called removeItem that is given two arguments, the first is myGroceryList, and the
-  second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches an item in myGroceryList,
+  second is an item to remove from myGroceryList. If the second argument (or the item to add or remove) matches 
+  an item in myGroceryList,
   remove that item from the your grocery list and return the new, updated grocery list. 
   
   Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList
@@ -129,6 +161,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+
+  function removeItem(myGroceryList, item) {
+    for (var i = 0; i < myGroceryList.length; i++) {
+      if (item === myGroceryList[i]) {
+        myGroceryList.splice(i, 1);
+        return myGroceryList;
+      }
+    }
+  }
+
+  function addItem(myGroceryList, item) {
+    myGroceryList.push(item);
+    return myGroceryList;
+  }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
