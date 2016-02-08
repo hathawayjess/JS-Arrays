@@ -107,10 +107,13 @@ var odds = [];
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
 };
-var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
-//Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. 
-//Your job is to write a function named finder that will get a random number, then loop through the array to see 
-//if that random number is in the array. If it is, return true, if it's not, return false
+//var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30]; 
+//Above you're given a function that will return a random number between 0 and 30.  There is also a commented out array 
+//full of numbers to help you visualize what your function will be receiving.
+// Your job is to write a function named finder that will get a random number (by invoking getRandomArbitrary),
+// then loop through the array (that will be passed in as a parameter) to see if that random number is in the array.
+// If it is, return true, if it's not, return false
+
 
   //Code Here
 
@@ -278,15 +281,13 @@ for(var i = 0; i < num2; i++){
           together.push(arr1[i]);
         }
       }
-    return together;
     }
+    return together;
   }
 
   console.log(arr1);
   console.log(arr2);
   console.log(both(arr1, arr2));
-  
-  
   
 
 //NEXT PROBLEM
@@ -326,13 +327,23 @@ sure that it's equal to 4. */
 
   //Code Here
 
+  devMountainEmployees.push(tyler);
+  devMountainEmployees.push(cahlan);
+  devMountainEmployees.push(ryan);
+  devMountainEmployees.push(colt);
+  console.log(devMountainEmployees.length);
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
   //Code Here
 
-
-
+  for (var i = 0; i < devMountainEmployees.length; i++) {
+    if (devMountainEmployees[i].name === 'Cahlan') {
+      devMountainEmployees.splice(i, 1);
+      break;
+    }
+  
+  }
 
 //NEXT PROBLEM
 
@@ -373,6 +384,8 @@ of Data is to have an Array full of objects. */
 
   //Code Here
 
+  var users = [];
+
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
 
@@ -381,10 +394,28 @@ var user1 = {
     name: 'Tyler McGinnis',
     email: 'tylermcginnis33@gmail.com',
     password: 'iLoveJavaScript',
-    username: 'infiniateLoop'
+    username: 'infiniteLoop'
 };
 
 //Your Code Here
+
+var user2 = {
+  name: 'Jess',
+  email: 'jess@jess.com',
+  password: 'password',
+  username: 'username'
+};
+
+var user3 = {
+  name: 'Howard',
+  email: 'howard@gmail.com',
+  password: 'uninspiredpw',
+  username: 'uninspiredusername'
+};
+
+users.push(user1);
+users.push(user2);
+users.push(user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -394,7 +425,20 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
+ //Code Here
+
+for (var i = 0; i < users.length; i++) {
+  if (users[i].email === "tylermcginnis33@gmail.com") {
+    users.splice(i, 1);
+    break;
+  }
+}
+
 
 //The activity we just did is very much how data works in 'the real world'.
+
+
+
+
+
 
