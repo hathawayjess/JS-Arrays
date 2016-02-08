@@ -189,6 +189,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 
+  function maker() {
+    var arr = [];
+    for (var i = 1; i <= 215; i++) {
+      arr.push(i);
+    }
+    return arr;
+  }
+
 
 
 //Next Problem
@@ -200,7 +208,13 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 
   //Code Here
 
-
+function addTen(numbers) {
+  var newArray = [];
+  for (var i = 0; i < numbers.length; i++) {
+    newArray[i] = Number(numbers[i]) + 10;
+}
+ return newArray;
+ }
 
 //Next Problem
 
@@ -217,10 +231,26 @@ for(var i = 0; i < num2; i++){
   arr2.push(i);
 }
 //Above is some code that adds a random number of values to both arr1 and arr2.
-//Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. Return the array which is longest.
+//Write a function called 'longer' that is given arr1 and arr2 as it's only arguments. 
+//Return the array which is longest.
 
   //Code Here
 
+  function longer(arr1, arr2) {
+    if (arr1.length > arr2.length) {
+      return arr1;
+    }
+    if (arr1.length < arr2.length) {
+      return arr2;
+     }
+    else {
+      return "Same Length";
+    }
+  }
+
+console.log(arr1);
+console.log(arr2);
+console.log(longer(arr1, arr2));
 
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
@@ -228,6 +258,33 @@ for(var i = 0; i < num2; i++){
 */
 
   //Code Here
+
+var num1 = Math.floor(Math.random() * (30 - 0) + 0);
+var num2 = Math.floor(Math.random() * (30 - 0) + 0);
+var arr1 = [];
+var arr2 = [];
+for(var i = 0; i < num1; i++){
+  arr1.push(i);
+}
+for(var i = 0; i < num2; i++){
+  arr2.push(i);
+}
+
+  function both(arr1, arr2) {
+    var together = [];
+    for (var i = 0; i < arr1.length; i++){
+      for (var j = 0; j < arr2.length; j++){
+        if (arr1[i] === arr2[j]) {
+          together.push(arr1[i]);
+        }
+      }
+    return together;
+    }
+  }
+
+  console.log(arr1);
+  console.log(arr2);
+  console.log(both(arr1, arr2));
   
   
   
